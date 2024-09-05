@@ -20,22 +20,32 @@ function calculateAmount(e) {
     const rent = parseFloat(document.querySelector("#rent").value) || 0;
     const menu = parseFloat(document.querySelector("#menu").value) || 0;
     const people = parseFloat(document.querySelector("#people").value) || 1;
-    /*if (weddingDress === "" || people === "" || rings === "" || decor === "" || foto === "" || rent === "" || menu) {
-        Swal.fire({
-            icon: "error",
-            title: "Ошибка!",
-            text: "Введите информацию!",
-        });
+    const tip = document.querySelector("#tip").value;
 
-    }*/
-
+    // Рассчитываем стоимость нарядов и колец на человека
     let amountPerPerson = (weddingDress + rings);
+
+    // Считаем организационные расходы
+    let totalExpenses = (menu * people) + decor + foto + rent;
+
+    // Вычисляем чаевые
+    let tipAmount = totalExpenses * tip;
+
+    // Общая сумма, включая чаевые
+    let totalSum = amountPerPerson + totalExpenses + tipAmount;
+
+    // Обновляем значения на странице
+    document.querySelector("#dividedBill").textContent = amountPerPerson.toFixed(2);
+    document.querySelector("#dividedTip").textContent = (totalExpenses + tipAmount).toFixed(2);
+    document.querySelector("#billAndTip").textContent = totalSum.toFixed(2);
+
+    /*let amountPerPerson = (weddingDress + rings);
     let tipPerPerson = ((menu * people) + decor + foto + rent);
     let totalSum = amountPerPerson + tipPerPerson;
 
 
     document.querySelector("#dividedBill").textContent = amountPerPerson.toFixed(2);
     document.querySelector("#dividedTip").textContent = tipPerPerson.toFixed(2);
-    document.querySelector("#billAndTip").textContent = totalSum.toFixed(2);
-
+    document.querySelector("#billAndTip").textContent = totalSum.toFixed(2);*/
+    console.log(totalExpenses)
 }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свадьбный калькулятор</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1>Свадьба мечты</h1>
+    </div>
+
+    <div class="container">
+        <h2>Свадебные расходы:</h2>
+        <form>
+            <p>Свадебные наряды</p>
+            <input type="text" id="weddingDress" placeholder="Сумма">
+
+            <p>Кольца</p>
+            <span>
+                <input type="text" id="rings" placeholder="Сумма">
+            </span>
+            <h2>Организация праздника</h2>
+
+            <p>Флористика и декор</p>
+            <span>
+                <input type="text" id="decor" placeholder="Сумма">
+            </span>
+            <p>Фото и Видео</p>
+            <span>
+                <input type="text" id="foto" placeholder="Сумма">
+            </span>
+            <p>Аренда помещения</p>
+            <span>
+                <input type="text" id="rent" placeholder="Сумма">
+            </span>
+            <p>Меню</p>
+            <span>
+                <input type="text" id="menu" placeholder="Сумма">
+            </span>
+            <p>Количество гостей</p>
+            <span>
+                <input type="text" id="people" placeholder="Сколько людей?">
+            </span>
+            <br>
+            <span>
+                <button id="addTip">Сервисное обслуживание</button>
+            <select id="tip">
+                    <option disabled>Выбери вариант</option>
+                    <option value="0.30">Отлично! 30% </option>
+                    <option value="0.20">Замечательный сервис! 20%</option>
+                    <option value="0.10" selec>Хорошо! 10% </option>
+            </select>
+            </span>
+
+
+
+            <button id="btn">Калькулятор</button>
+        </form>
+        <div id="showTotalAmountToPay">
+            <div id="billSplit">
+                <p>Свадебные расходы</p>
+                <span id="dividedBill"></span>
+                <span>руб</span>
+            </div>
+            <div id="totalSplit">
+                <p>Организация</p>
+                <span id="dividedTip"></span>
+                <span>руб</span>
+
+            </div>
+            <div id="totalAmount">
+                <p>Общая сумма</p>
+                <span id="billAndTip"></span>
+                <span>руб</span>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
